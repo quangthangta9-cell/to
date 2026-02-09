@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(
+    rgb(187, 222, 251),
+    rgb(227, 242, 253),
+    rgb(255, 255, 255)
+  );
+}
+
+/* ===== HEADER ===== */
+.header {
+  height: 280px;
+  background-image: url("thptqs.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.45);
+}
+
+.header-text {
+  position: relative;
+  z-index: 1;
+  color: Yellow;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.header-text p {
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.content h2 {
+  color: #0d47a1;
+  margin-bottom: 30px;
+}
+
+/* ===== BUTTONS ===== */
+.button-box {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  width: 260px;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(rgb(144,202,249), rgb(187,222,251));
+  border: 2px solid rgb(25,118,210);
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+}
+
+/* ===== FACEBOOK BUTTON ===== */
+.fb {
+  background: linear-gradient(rgb(66,103,178), rgb(24,119,242));
+  color: white;
+  border-color: rgb(24,119,242);
+}
+
+.fb:hover {
+  background: linear-gradient(rgb(24,119,242), rgb(66,103,178));
+}
+
+/* ===== BACK LINK ===== */
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1565c0;
+}
+/* ===== HOA MAI GIẢ 3D ===== */
+.falling-flowers {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  perspective: 800px;
+  z-index: 999;
+}
+
+.flower {
+  position: absolute;
+  top: -80px;
+  width: 40px;
+  height: 40px;
+  background-image: url("hoamai.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall3d linear infinite;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,0.35));
+}
+
+@keyframes fall3d {
+  0% {
+    transform:
+      translateY(-100px)
+      rotateX(0deg)
+      rotateY(0deg)
+      rotateZ(0deg)
+      scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translateY(110vh)
+      rotateX(360deg)
+      rotateY(180deg)
+      rotateZ(360deg)
+      scale(1.1);
+    opacity: 0.9;
+  }
+}
+/* ===== GALLERY 3 ẢNH CUỐI TRANG (ỔN ĐỊNH) ===== */
+.footer-gallery {
+  max-width: 1000px;
+  margin: 80px auto 50px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.footer-gallery h2 {
+  color: #0d47a1;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  width: 300px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 3px solid #1976d2;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.06);
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  font-weight: 500;
+  color: #0d47a1;
+  font-size: 16px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
